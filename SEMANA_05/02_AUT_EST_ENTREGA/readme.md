@@ -9,4 +9,4 @@ Bom trabalho!!!
 ## Forma de entrega
 - Publique a sua solução como uma página Git Page, pois ela a partir deste momento será a página de seu currículo.
 - Na resposta ao card na Adalove, inclua o link para a sua Git Page. 
-- Se você não conseguir enviar o link de sua Git Page, encaminhe o link diretamente do Git Hub.
+- Se você não conseguir enviar o link de sua Git Page, encaminhe o link diretamente do GitHub.
