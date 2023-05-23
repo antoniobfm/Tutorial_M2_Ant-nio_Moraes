@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="transaction.sql" id="Project-14ba" database="Sqlite" >
+	<schema name="public" >
+		<table name="experiencias" spec="" >
+			<column name="id" type="INTEGER" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTOINCREMENT]]></identity>
+			</column>
+			<column name="usuario_id" type="INTEGER" jt="4" mandatory="y" />
+			<column name="nome" type="TEXT" jt="-1" mandatory="y" />
+			<column name="inicio" type="INTEGER" jt="4" mandatory="y" />
+			<column name="fim" type="INTEGER" jt="4" />
+			<column name="cargo" type="TEXT" jt="-1" mandatory="y" />
+			<column name="descricao" type="TEXT" jt="-1" mandatory="y" />
+			<index name="pk_experiencias" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="experiencias_usuario_id_index" unique="NORMAL" >
+				<column name="usuario_id" />
+			</index>
+			<fk name="fk_experiencias" to_schema="public" to_table="usuarios" delete_action="cascade" update_action="cascade" >
+				<fk_column name="usuario_id" pk="id" />
+			</fk>
+		</table>
+		<table name="formacoes" spec="" >
+			<column name="id" type="INTEGER" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTOINCREMENT]]></identity>
+			</column>
+			<column name="usuario_id" type="INTEGER" jt="4" mandatory="y" />
+			<column name="nome" type="INTEGER" jt="4" mandatory="y" />
+			<column name="inicio" type="INTEGER" jt="4" mandatory="y" />
+			<column name="fim" type="INTEGER" jt="4" />
+			<column name="descricao" type="TEXT" jt="-1" mandatory="y" />
+			<index name="pk_formacoes" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="formacoes_usuario_id_index" unique="NORMAL" >
+				<column name="usuario_id" />
+			</index>
+			<fk name="fk_formacoes" to_schema="public" to_table="usuarios" delete_action="cascade" update_action="cascade" >
+				<fk_column name="usuario_id" pk="id" />
+			</fk>
+		</table>
+		<table name="habilidades" spec="" >
+			<column name="id" type="INTEGER" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTOINCREMENT]]></identity>
+			</column>
+			<column name="usuario_id" type="INTEGER" jt="4" mandatory="y" />
+			<column name="nome" type="TEXT" jt="-1" mandatory="y" />
+			<column name="estrelas" type="INTEGER" jt="4" mandatory="y" />
+			<index name="pk_habilidades" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="habilidades_usuario_id_index" unique="NORMAL" >
+				<column name="usuario_id" />
+			</index>
+			<fk name="fk_habilidades" to_schema="public" to_table="usuarios" delete_action="cascade" update_action="cascade" >
+				<fk_column name="usuario_id" pk="id" />
+			</fk>
+		</table>
+		<table name="personalidades" spec="" >
+			<column name="id" type="INTEGER" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTOINCREMENT]]></identity>
+			</column>
+			<column name="usuario_id" type="INTEGER" jt="4" mandatory="y" />
+			<column name="nome" type="TEXT" jt="-1" mandatory="y" />
+			<column name="estrelas" type="INTEGER" jt="4" mandatory="y" />
+			<index name="pk_personalidades" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="personalidades_usuario_id_index" unique="NORMAL" >
+				<column name="usuario_id" />
+			</index>
+			<fk name="fk_personalidades" to_schema="public" to_table="usuarios" delete_action="cascade" update_action="cascade" >
+				<fk_column name="usuario_id" pk="id" />
+			</fk>
+		</table>
+		<table name="realizacoes" spec="" >
+			<column name="id" type="INTEGER" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTOINCREMENT]]></identity>
+			</column>
+			<column name="usuario_id" type="INTEGER" jt="4" mandatory="y" />
+			<column name="nome" type="TEXT" jt="-1" mandatory="y" />
+			<column name="data" type="INTEGER" jt="4" mandatory="y" />
+			<column name="descricao" type="TEXT" jt="-1" mandatory="y" />
+			<index name="pk_realizacoes" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="realizacoes_usuario_id_index" unique="NORMAL" >
+				<column name="usuario_id" />
+			</index>
+			<fk name="fk_realizacoes" to_schema="public" to_table="usuarios" delete_action="cascade" update_action="cascade" >
+				<fk_column name="usuario_id" pk="id" />
+			</fk>
+		</table>
+		<table name="sobre_mim" spec="" >
+			<column name="id" type="INTEGER" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTOINCREMENT]]></identity>
+			</column>
+			<column name="usuario_id" type="INTEGER" jt="4" mandatory="y" />
+			<column name="cargo" type="TEXT" jt="-1" mandatory="y" />
+			<column name="nome" type="TEXT" jt="-1" mandatory="y" />
+			<column name="picture_url" type="TEXT" jt="-1" mandatory="y" />
+			<column name="endereco" type="TEXT" jt="-1" mandatory="y" />
+			<column name="telefone" type="TEXT" jt="-1" mandatory="y" />
+			<column name="email" type="TEXT" jt="-1" mandatory="y" />
+			<column name="biografia" type="TEXT" jt="-1" mandatory="y" />
+			<index name="pk_sobre_mim" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="sobre_mim_usuario_id_index" unique="NORMAL" >
+				<column name="usuario_id" />
+			</index>
+			<fk name="fk_sobre_mim" to_schema="public" to_table="usuarios" delete_action="cascade" update_action="cascade" >
+				<fk_column name="usuario_id" pk="id" />
+			</fk>
+		</table>
+		<table name="usuarios" spec="" >
+			<column name="id" type="INTEGER" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTOINCREMENT]]></identity>
+			</column>
+			<index name="pk_usuarios" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Layout" id="Layout-711" show_relation="columns" >
+		<entity schema="public" name="experiencias" color="BED3F4" x="160" y="288" />
+		<entity schema="public" name="formacoes" color="BED3F4" x="480" y="304" />
+		<entity schema="public" name="habilidades" color="BED3F4" x="480" y="512" />
+		<entity schema="public" name="personalidades" color="BED3F4" x="160" y="544" />
+		<entity schema="public" name="realizacoes" color="BED3F4" x="48" y="432" />
+		<entity schema="public" name="sobre_mim" color="BED3F4" x="320" y="48" />
+		<entity schema="public" name="usuarios" color="BED3F4" x="336" y="432" />
+		<query id="Query-e5f" name="fk_sobre_mim" >
+			<query_table schema="public" name="usuarios" alias="u" x="48" y="48" >
+				<column name="id" />
+				<query_table schema="public" name="sobre_mim" alias="sm" x="208" y="48" fk="fk_sobre_mim" type="Inner Join" />
+			</query_table>
+		</query>
+	</layout>
+</project>
